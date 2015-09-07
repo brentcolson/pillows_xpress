@@ -13,8 +13,8 @@ var eligiblePillows;
 Main Function
 ***********************/
 
-var findRecommendedPillows = function(){
-	validateResponseOne = validateResponse("firmness", "sleep_position", "budget");
+var findRecommendedPillows = function findRecommendedPillows() {
+	validateResponses = validateResponse("firmness", "sleep_position", "budget");
 
 	selectedPillowFirmness = getRadioValue("firmness");
 	selectedSleepPosition = getRadioValue("sleep_position");
@@ -26,12 +26,9 @@ var findRecommendedPillows = function(){
 		filter(eligiblePillowBySleepPosition).
 		sort(acendingOrder);
 
-	eligiblePillows.length = 2; //there should only be up to 2 pillows displaying on the screen at a time
-
-
 	renderPillows(eligiblePillows);
-	
-}
+
+};
 
 
 
@@ -90,17 +87,18 @@ var determinePillowImg = function(pillow){
 	return `img/pillow_${firmness}.jpg`
 }
 
-var renderPillows = function(eligiblePillows) {
-	console.log("rendering pillows...")
+var renderPillows = function renderPillows(eligiblePillows) {
 	wrapper.removeChild(introduction);
 	wrapper.removeChild(recommendationForm);
-	var pillowHtml = eligiblePillows.map(function(pillow){
+	addPillowIfNoEligiblePillows(eligiblePillows);
+	var pillowHtml = eligiblePillows.map(function (pillow) {
 		return renderPillow(pillow).innerHTML;
 	}).join("");
 	wrapper.innerHTML = pillowHtml;
 	var secondRecommendationHeader = document.getElementsByClassName("recommendationHeader")[1];
 	secondRecommendationHeader.innerText = "Another great option";
-}
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
+};
 
 var renderPillow = function(pillow){
 	var pillowHtml = document.createElement("section");

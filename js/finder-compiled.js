@@ -22,11 +22,14 @@ var findRecommendedPillows = function findRecommendedPillows() {
 	selectedSleepPosition = getRadioValue("sleep_position");
 	selectedBudget = getRadioValue("budget");
 
-	eligiblePillows = pillows.filter(eligiblePillowByFirmness).filter(eligiblePillowByBudget).filter(eligiblePillowBySleepPosition).sort(acendingOrder);
-
-	eligiblePillows.length = 2; //there should only be up to 2 pillows displaying on the screen at a time
+	eligiblePillows = pillows.
+		filter(eligiblePillowByFirmness).
+		filter(eligiblePillowByBudget).
+		filter(eligiblePillowBySleepPosition).
+		sort(acendingOrder);
 
 	renderPillows(eligiblePillows);
+
 };
 
 /***********************
@@ -61,7 +64,6 @@ var eligiblePillowBySleepPosition = function eligiblePillowBySleepPosition(pillo
 };
 
 var firmnessCalculator = function firmnessCalculator(pillow) {
-	console.log("calculating firmness");
 	var firmnessRatio = pillow.weightOz / pillow.sizeSqIn;
 	if (firmnessRatio < .03) {
 		return "soft";
@@ -76,21 +78,28 @@ var acendingOrder = function acendingOrder(a, b) {
 	return b.priceStandard - a.priceStandard;
 };
 
+var addPillowIfNoEligiblePillows = function(array){
+	if(array.length === 0){
+		array[0] = pillows[0];
+	}
+}
+
 var determinePillowImg = function determinePillowImg(pillow) {
 	var firmness = firmnessCalculator(pillow);
 	return "img/pillow_" + firmness + ".jpg";
 };
 
 var renderPillows = function renderPillows(eligiblePillows) {
-	console.log("rendering pillows...");
 	wrapper.removeChild(introduction);
 	wrapper.removeChild(recommendationForm);
+	addPillowIfNoEligiblePillows(eligiblePillows);
 	var pillowHtml = eligiblePillows.map(function (pillow) {
 		return renderPillow(pillow).innerHTML;
 	}).join("");
 	wrapper.innerHTML = pillowHtml;
 	var secondRecommendationHeader = document.getElementsByClassName("recommendationHeader")[1];
 	secondRecommendationHeader.innerText = "Another great option";
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
 };
 
 var renderPillow = function renderPillow(pillow) {
