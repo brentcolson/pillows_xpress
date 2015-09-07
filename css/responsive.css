@@ -1,0 +1,73 @@
+@media screen and (min-width: 660px) {
+ 
+   /*******************************
+  HEADER
+  *******************************/
+  
+  header nav {
+    background: none;
+    float: right;
+    font-size: 1.125em;
+    margin-right: 5%;
+    padding-top: 25px;
+    text-align: right;
+    width: 40%;
+  }
+
+  #logo {
+    float: left;
+    margin-left: 5%;
+    text-align: left;
+    width: 45%;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  h2 {
+    font-size: 0.825em;
+    margin-bottom: 20px;
+  }
+  
+  header {
+    border-bottom: 5px solid #599a68;
+    margin-bottom: 60px;
+  }
+
+  .price {
+    margin-top: -45px;
+  }
+
+
+  /*******************************
+  HEADER
+  *******************************/
+
+  .pillowImg {
+  max-width: 30%;
+  }
+
+  /*******************************
+  Intro
+  *******************************/
+  #about {
+    color: blue;
+  }
+
+  .img-two-wide {
+  float: left;
+  width: 30%;
+  margin: 10px 10%;
+  margin-bottom: 20px;
+  }
+
+  div img {
+  float: left;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px;
+  }
+
+}

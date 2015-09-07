@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PillowsXpress | Sleep Well</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+</head>
+<body>
+	<header>
+		<a href="index.html" id="logo">	
+				<h1>
+					PillowsXpress
+				</h1>
+		</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Introduction</a></li>
+				<li><a href="pillowfinder.html" class="selected">Pillow Finder</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="wrapper">
+		<section id="introduction">
+			<h3 id="trademark">The PillowFinder &#153</h3>
+			<p class="introduction">Answer these three questions and you will meet the last pillow you’ll ever want to sleep on.</p>
+		</section>
+		<form id="recommendationForm" name="survey" onsubmit="return validate">
+			<label class="questionHeaders">1) How firm is your current pillow?</label><br>
+				<input type="radio" id="soft" value="soft" name="firmness"><label for="soft" class="">Soft</label><br>
+				<input type="radio" id="medium" value="medium" name="firmness"><label for="medium" class="">Medium</label><br>
+				<input type="radio" id="firm" value="firm" name="firmness"><label for="firm" class="">Firm</label><br>
+			<label class="questionHeaders">2) On which side do you sleep?</label><br>
+				<input type="radio" id="stomach" value="stomach" name="sleep_position"><label for="stomach" class="">Stomach</label><br>
+				<input type="radio" id="side" value="side" name="sleep_position"><label for="side" class="">Side</label><br>
+				<input type="radio" id="back" value="back" name="sleep_position"><label for="back" class="">Back</label><br>
+				<input type="radio" id="all_sides" value="all" name="sleep_position"><label for="all_sides" class="">A little bit of everything</label><br>
+			<label class="questionHeaders">3) How much is your budget for a pillow?</label><br>
+				<input type="radio" id="small_budget" value="51" name="budget"><label for="small_budget" class=""></label>$25-$50<br>
+				<input type="radio" id="medium" value="76" name="budget"><label for="medium" class="">$51-$75</label><br>
+				<input type="radio" id="high" value="1000" name="budget"><label for="high" class="">$76+</label><br>
+			<button type="button" id="submitButton">Find The Perfect Pillow!</button><br>
+		</form>
+	</div>
+	<footer>
+		<nav>
+			<ul>
+				<li><a href="index.html" class="selected">Pillow Finder</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+		</nav>
+ 		<p>&copy; 2015 Brent Colson</p>
+	</footer>
+	<script type="text/javascript" src="js/pillows.js"></script>
+    <script type="text/javascript" src="js/finder-compiled.js"></script>
+</body>
+</html>

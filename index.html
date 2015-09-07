@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HR Application</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+</head>
+<body>
+	<header>
+		<a href="index.html" id="logo">	
+				<h1>
+					PillowsXpress
+				</h1>
+		</a>
+		<nav>
+			<ul>
+				<li><a href="index.html" class="selected">Introduction</a></li>
+				<li><a href="pillowfinder.html">Pillow Finder</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="wrapper">
+		<section>
+        <h3 id="about-title">Hack Reactor Application</h3>
+        <p class="about-text">Hi - my name is Brent Colson, and I am applying to get into the October Remote cohort.  I was asked to build an application from scratch, which was a great opportunity to put together everything that I had learned in Code Academy, Treehouse, and Eloquent JavaScript.</p>
+        <p class="about-text">I thought a fun project would be to create an application that would make it easy for people who are searching for a better pillow to find the perfect match.  There is a company that I have purchased from in the past that makes AMAZING pillows, but their website (PillowsXpress.com) is pretty bad and it’s tough to find the right one.  By asking the user a couple of questions about how they sleep and what their budget is, I could make a recommendation on which pillow they should purchase.</p>
+        <h3><u>Process</u></h3>
+        <p class="about-text">I tried to use the best practices that I have learned in my self study. This is roughly the process I went through:</p>
+        <p class="about-text">1) Mocked up the screens of the application:</p>
+        <img src="img/mockup-one.jpg" class="img-two-wide" id="first-image">
+        <img src="img/mockup-two.jpg" class="img-two-wide">
+        <p class="about-text">2) Coded the HTML and CSS for both the questionnaire and the recommendations</p>
+        <p class="about-text">3) Planned out the logic of the application</p>
+     	<img src="img/plan-narrow.jpg">
+        <p class="about-text">4) Coded the first revision of the application and got it working. I spent some time with a friend with more JS experience than I and he suggested that the over 100 lines of code I had written for building the HTML for the recommendation page was much more cumbersome than I needed to make it.  Originally, I created every element of the HTML separately, modified them, and then appended them each to recommendation sections.  Here is a sample of that code:</p>
+        <img src="img/create-elements.jpg">
+        <p class="about-text">5) My friend suggested that I either try including the pillow recommendations HTML right in the main HTML document with a CSS hide tag, or that I try using ECMAScript 6’s Template Strings to generate the HTML with dynamic content from the recommended pillows from the js file.  I decided to experiment with the Template Strings.  Here is a sample of the refactored code</p>
+        <img src="img/ecma.jpg">
+        <p class="about-text">6) With this new code working on Chrome and Safari Beta (9.0), I wanted to make it compatible with older browsers, so I used Babel CLI to compile a new js file with compatible code</p>
+        <p class="about-text">And that is about it!  I hope this showcases well my current ability and my desire to learn.  <a href="pillowfinder.html">Try out the PillowFinder here!</a></p>
+        <p class="about-text">Brent</p>
+      </section>
+	</div>
+	<footer>
+		<nav>
+			<ul>
+				<li><a href="index.html">Pillow Finder</a></li>
+				<li><a href="about.html" class="selected">About</a></li>
+			</ul>
+		</nav>
+ 		<p>&copy; 2015 Brent Colson</p>
+	</footer>
+</body>
+</html>
